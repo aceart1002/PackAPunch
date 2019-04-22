@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 public class GUI {
 
 		static JTextField textfield1, textfield2, textfield3;
-		static JButton openCmd, openCmdWithCommands, moreConsole, nonCom;
+		static JButton openCmd, openCmdWithCommands, moreConsole, nonCom, anotherPopUp;
 		
 		
 		 public static void start(String[] args) {
@@ -33,6 +33,8 @@ public class GUI {
 			    f.getContentPane().add(moreConsole);
 			    nonCom = new JButton("pop up");
 			    f.getContentPane().add(nonCom);
+			    anotherPopUp = new JButton("another pop up");
+			    f.getContentPane().add(anotherPopUp);
 			    
 			    ConsoleCaller call = new SimpleConsole();
 			    openCmd.addActionListener(call);
@@ -42,6 +44,14 @@ public class GUI {
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						 JOptionPane.showMessageDialog(f, "Massage", "TITEL",1);
+						
+					}
+				}
+			    );
+			    anotherPopUp.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						 JOptionPane.showMessageDialog(f, "See the massage", "SAMPLE TEXT",3);
 						
 					}
 				}
